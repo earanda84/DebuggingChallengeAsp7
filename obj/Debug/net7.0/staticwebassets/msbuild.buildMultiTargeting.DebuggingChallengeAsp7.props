@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../build/DebuggingChallengeAsp7.props" />
+</Project>

@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Login Page";
+}
+
+@model User
+
+<div class="text-center">
+    <h1>Welcome! Tell us a little about yourself before we get started.</h1>
+    @* El error que se presenta es que la ruta del action del formulario es MakeUser y la ruta en donde recibe los parametros del formulario es CreateUser *@
+    <form asp-action="CreateUser" asp-controller="Home" method="post" class="col-4 mx-auto p-4">
+        <div class="mb-3">
+            @* En el label no se declara el atributo asp-for por defecto a diferencia del input *@
+            <label asp-for="Name">What is your name?</label>
+            <input asp-for="Name" class="form-control">
+            @* No se declaro span que muestre los errores de las validaciones *@
+            <span asp-validation-for="Name"></span>
+        </div>
+        <div class="mb-3">
+            @* En el label no se declara el atributo asp-for por defecto a diferencia del input *@
+            <label asp-for="Location">(Optional) Where are you from?</label>
+            <input asp-for="Location" class="form-control">
+        </div>
+        <div class="mb-3">
+            <input type="submit" value="Submit" class="btn btn-primary">
+        </div>
+    </form>
+</div>
